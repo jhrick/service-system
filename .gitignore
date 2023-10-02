@@ -39,3 +39,4 @@ build/
 
 ### Project ###
 src/main/resources/db
+.env
