@@ -3,7 +3,7 @@ package org.example.client;
 import java.util.UUID;
 
 public class Client {
-    private final String id = UUID.randomUUID().toString();
+    private final String ID = UUID.randomUUID().toString();
     private String name;
     private int age;
     private String password;
@@ -22,8 +22,8 @@ public class Client {
         this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public String getID() {
+        return ID;
     }
 
     public int getAge() {
