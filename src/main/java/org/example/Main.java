@@ -3,6 +3,10 @@ package org.example;
 import org.example.client.Client;
 import org.example.client.create.Register;
 
+<<<<<<< HEAD
+=======
+import javax.swing.plaf.synth.SynthTextAreaUI;
+>>>>>>> origin/dev
 import java.util.Scanner;
 
 public class Main {
