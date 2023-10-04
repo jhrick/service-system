@@ -1,16 +1,20 @@
 package org.example.client;
 
+import org.jetbrains.annotations.Nullable;
+
+import java.time.OffsetDateTime;
 import java.util.UUID;
 
-public class Client {
-    private final String ID = UUID.randomUUID().toString();
+public final class Client {
+    private final UUID uniqueId;
     private String name;
-    private int age;
+    private final OffsetDateTime since;
     private String password;
 
-    public Client(String name, int age, String password) {
+    public Client(@Nullable UUID uniqueId, String name, OffsetDateTime since, String password) {
+        this.uniqueId = (!(uniqueId == null) ? uniqueId : UUID.randomUUID());
         this.name = name;
-        this.age = age;
+        this.since= since;
         this.password = password;
     }
 
@@ -22,16 +26,12 @@ public class Client {
         this.name = name;
     }
 
-    public String getID() {
-        return ID;
+    public UUID getUniqueId() {
+        return uniqueId;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public OffsetDateTime getSince() {
+        return since;
     }
 
     public String getPassword() {
