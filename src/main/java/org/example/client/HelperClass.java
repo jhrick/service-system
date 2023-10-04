@@ -5,7 +5,6 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 
 public final class HelperClass {
     @NotNull
@@ -21,13 +20,8 @@ public final class HelperClass {
     }
 
     @NotNull
-    public static String offsetDateTimeForString(@NotNull OffsetDateTime since) {
-        return since.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
-    }
-
-    @NotNull
     @Contract(pure = true)
     public static OffsetDateTime stringForOffsetDateTime(String since) {
-        return OffsetDateTime.parse(since, DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+        return OffsetDateTime.parse(since);
     }
 }

@@ -3,6 +3,7 @@ package org.example.client;
 import org.jetbrains.annotations.Nullable;
 
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
 public final class Client {

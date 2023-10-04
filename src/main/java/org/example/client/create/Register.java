@@ -4,7 +4,6 @@ import org.example.client.Client;
 import org.example.client.HelperClass;
 
 import java.sql.*;
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 public class Register {
@@ -14,7 +13,7 @@ public class Register {
 
         final UUID CLIENT_ID = newClient.getUniqueId();
         final String CLIENT_NAME = newClient.getName();
-        final OffsetDateTime CLIENT_SINCE = newClient.getSince();
+        final String CLIENT_SINCE = String.valueOf(newClient.getSince());
         final String CLIENT_PASSWORD = HelperClass.toHash(newClient.getPassword());
 
         try {
@@ -30,7 +29,7 @@ public class Register {
 
             preparedStatement.setString(1, String.valueOf(CLIENT_ID));
             preparedStatement.setString(2, CLIENT_NAME);
-            preparedStatement.setString(3, HelperClass.offsetDateTimeForString(CLIENT_SINCE));
+            preparedStatement.setString(3, CLIENT_SINCE);
             preparedStatement.setString(4, CLIENT_PASSWORD);
 
             preparedStatement.executeUpdate();
