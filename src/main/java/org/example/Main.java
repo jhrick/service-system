@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.client.Client;
 import org.example.client.create.Register;
+import org.example.client.read.Read;
 
 import java.time.OffsetDateTime;
 import java.util.Scanner;
@@ -50,7 +51,15 @@ public class Main {
 
                 break;
             case "2":
-                System.out.println("In progress...");
+                System.out.println("What is your account name?");
+                String clientAccountName = scan.next();
+
+                scan.nextLine();
+
+                System.out.println("What is your account password?");
+                String clientAccountPassword = scan.nextLine();
+
+                Read.read(clientAccountName, clientAccountPassword);
                 break;
             case "3":
                 System.out.println("In progress...");
