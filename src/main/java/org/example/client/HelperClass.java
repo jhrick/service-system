@@ -18,10 +18,4 @@ public final class HelperClass {
 
         return result.verified;
     }
-
-    @NotNull
-    @Contract(pure = true)
-    public static OffsetDateTime stringForOffsetDateTime(String since) {
-        return OffsetDateTime.parse(since);
-    }
 }
