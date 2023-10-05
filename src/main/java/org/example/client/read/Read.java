@@ -2,6 +2,7 @@ package org.example.client.read;
 
 import org.example.client.Client;
 import org.example.client.HelperClass;
+import org.example.databaseconfig.DatabaseConfig;
 
 import java.sql.*;
 import java.time.OffsetDateTime;
@@ -14,7 +15,7 @@ public class Read {
         Statement statement;
         ResultSet resultSet;
 
-        final String DB_CLIENTS_PATH = "jdbc:sqlite:src/main/resources/db/clients.db";
+        final String DB_CLIENTS_PATH = DatabaseConfig.getDatabaseFile();
 
         try {
             Class.forName("org.sqlite.JDBC");

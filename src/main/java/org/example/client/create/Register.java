@@ -2,6 +2,7 @@ package org.example.client.create;
 
 import org.example.client.Client;
 import org.example.client.HelperClass;
+import org.example.databaseconfig.DatabaseConfig;
 
 import java.sql.*;
 import java.util.UUID;
@@ -19,7 +20,7 @@ public class Register {
         try {
             Class.forName("org.sqlite.JDBC");
 
-            final String DB_CLIENTS_PATH = "jdbc:sqlite:src/main/resources/db/clients.db";
+            final String DB_CLIENTS_PATH = DatabaseConfig.getDatabaseFile();
 
             connection = DriverManager.getConnection(DB_CLIENTS_PATH);
 
