@@ -43,15 +43,13 @@ public class Read {
 
             OffsetDateTime clientSince = OffsetDateTime.parse(resultSet.getString(3));
 
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
             Client client = new Client(UUID.fromString(clientId), clientName, clientSince, password);
 
             System.out.println("\nID: " + client.getUniqueId());
             System.out.println("Name: " + client.getName());
             System.out.println("Password: " + client.getPassword());
 
-            String formattedClientSince = client.getSince().format(formatter);
+            String formattedClientSince = client.getSince().toString();
             System.out.println("Since: " + formattedClientSince);
 
         } catch (SQLException | ClassNotFoundException e) {
